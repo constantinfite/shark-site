@@ -27,14 +27,14 @@ export default {
   width: 100%;
   background-repeat: no-repeat;
   padding-top: 12rem;
-  background-size: auto 180rem;
+  background-size: auto 100rem;
   background-position: center;
   background-image: url("../assets/images/blacktip.jpg");
 }
 .title {
   color: #fff;
-  text-align: center;
-  padding-top: 5rem;
+  text-align: start;
+  padding-bottom: 2rem;
 }
 
 .title-heading {

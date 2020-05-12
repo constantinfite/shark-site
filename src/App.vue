@@ -9,23 +9,10 @@
           <div class="menu-btn" @click="toggle">
             <div class="menu-btn_burger"></div>
           </div>
-          <!-- <div class="mobile-menu" >
-          <span class="line line-top"></span>
-          <span class="line line-bottom"></span>
-          </div>-->
-          <!-- <div class="toggle-icons">
-            <i id="menu-btn" class="fas fa-bars"></i>
-          </div>-->
-
-          <!-- <ul class="nav-list nav-list-mobile">
-            <li class="nav-item">
-              
-            </li>
-          </ul>-->
 
           <ul class="nav-list">
             <li class="nav-item">
-              <router-link to="/">Accueil</router-link>
+              <router-link to="/">Home</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/informations">Informations</router-link>
@@ -66,40 +53,41 @@ export default {
         selectElement(".menu-btn").classList.remove("open");
         this.menuOpen = false;
       }
-      selectElement("ul").classList.toggle("active");
+      selectElement("header").classList.toggle("active");
+      // selectElement("nav").classList.toggle("nav");
     }
   }
 };
 </script>
 <style>
-ul a {
+.nav-list .nav-item {
   font-weight: bold;
-  color: #2c3e50;
-  font-size: 2rem;
-  padding: 0 2rem;
+  color: #1a1a1a;
+  font-size: 1.4rem;
+  padding: 0 1rem;
+}
+
+ul li a {
+  color: #e9e9e9;
 }
 
 ul a.router-link-exact-active {
-  color: #42b983;
+  color: #F9DF6F;
 }
 
-.container-nav {
-  max-width: 1300px;
-  position: relative;
-}
 header {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   z-index: 1500;
-  background-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(180deg, #ffffff,#47A6C4,#217EB5, #1D328F,#1C1867);
   backdrop-filter: blur(2rem);
 }
 
 nav {
+  position: relative;
+  z-index: 1500;
   display: flex;
   flex-wrap: wrap;
 }
@@ -109,7 +97,7 @@ nav {
   justify-content: center;
 }
 .logo {
-  width: 10rem;
+  width: 5rem;
 }
 .logo-link {
   margin-right: auto;
