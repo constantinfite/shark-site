@@ -3,30 +3,34 @@
     <header>
       <div class="container container-nav">
         <nav>
-          <a href class="logo-link">
-            <img class="logo" src="./assets/images/shark.png" alt />
-          </a>
-          <div class="menu-btn" @click="toggle">
-            <div class="menu-btn_burger"></div>
+          <div class="logo-container">
+            <a href class="logo-link">
+              <img class="logo" src="./assets/images/shark.png" alt />
+            </a>
+            <div class="menu-btn" @click="toggle">
+              <div class="menu-btn_burger"></div>
+            </div>
           </div>
 
-          <ul class="nav-list">
-            <li class="nav-item">
-              <router-link to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/informations">Informations</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/species">Species</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/data">Data</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/support">Support</router-link>
-            </li>
-          </ul>
+          <div class="main-menu-container">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <router-link to="/">Home</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/informations">Informations</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/species">Species</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/data">Data</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/support">Support</router-link>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
     </header>
@@ -53,7 +57,7 @@ export default {
         selectElement(".menu-btn").classList.remove("open");
         this.menuOpen = false;
       }
-      selectElement("header").classList.toggle("active");
+      selectElement(".main-menu-container").classList.toggle("active");
       // selectElement("nav").classList.toggle("nav");
     }
   }
@@ -72,7 +76,7 @@ ul li a {
 }
 
 ul a.router-link-exact-active {
-  color: #F9DF6F;
+  color: #f9df6f;
 }
 
 header {
@@ -81,13 +85,22 @@ header {
   top: 0;
   left: 0;
   z-index: 1500;
-  background: linear-gradient(180deg, #ffffff,#47A6C4,#217EB5, #1D328F,#1C1867);
+  /* background: linear-gradient( 
+    180deg,
+    #ffffff,
+    #47a6c4,
+    #217eb5,
+    #1d328f,
+    #1c1867
+  );*/
+  background: #fff;
   backdrop-filter: blur(2rem);
 }
 
 nav {
   position: relative;
   z-index: 1500;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -96,11 +109,18 @@ nav {
   align-items: center;
   justify-content: center;
 }
+.logo-container {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+.main-menu-container {
+  display: flex;
+}
 .logo {
   width: 5rem;
 }
 .logo-link {
-  margin-right: auto;
   align-items: center;
 }
 </style>
